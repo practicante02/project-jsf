@@ -7,7 +7,8 @@ import java.io.IOException;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+
+
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
@@ -23,7 +24,7 @@ public class SessionClosedController {
 	@PostConstruct
 	public void init() {
 
-		System.out.println("Cerrar sesión......");
+		System.out.println("Cerrar sesion......");
 		
 	}
 
@@ -38,9 +39,10 @@ public class SessionClosedController {
 		
 		
 		try {
-			this.redireccionar("login.xthml");
+			redireccionar("login.xhtml");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		
+			
 			
 			e.printStackTrace();
 		}
@@ -52,8 +54,6 @@ public class SessionClosedController {
 	 * @param pagina {@link String} pagina a redirrecionarse
 	 * @throws IOException Excepcion en caso de errrr al encontrar la pagina
 	 */
-	
-
 	private void redireccionar(String pagina) throws IOException {
 
 		ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
